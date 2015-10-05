@@ -1,0 +1,14 @@
+<button {{action 'showMap'}} class="btn btn-primary display-map">Find a Daycare</button>
+
+<div class="col-xs-4 search-daycare">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Enter Zip Code">
+    <span class="input-group-btn">
+      <button {{action 'search'}} class="btn btn-default" type="button">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </button>
+    </span>
+  </div><!-- /input-group -->
+</div>
+
+<div class="map-display"></div>
