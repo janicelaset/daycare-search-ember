@@ -1,0 +1,39 @@
+{
+  "daycares": [
+    {"name": "Sweet Care",
+    "address": "1234 Nowhere St, Portland, OR 97211",
+    "email": "fake@gmail.com",
+    "phone": "305 560 1234",
+    "waitlist": "1 year",
+    "ratio": "5:1",
+    "certifications": "NAEYC, QRIS 5",
+    "hours": "7:30 AM - 6:00 PM",
+    "mission": "Create an secure environment for children.",
+    "description": "Sweet Care is a licenced child care facility that provides care for children of all ages.",
+    "username": "sweetcare",
+    "password": "1234",
+    "image1": "http://genheration.com/wp-content/uploads/2015/02/daycare_play_rug.jpg",
+    "image2": "http://www.commdiginews.com/wp-content/uploads/2014/10/good-daycare.jpg",
+    "image3": "https://www.vapaternity.org/wp-content/uploads/2013/02/day-care.jpg",
+    "image4": "https://blog.mint.com/wp-content/uploads/2013/08/The-Cost-of-Childcare-Vs.-the-Cost-of-Not-Working.jpg",
+    "image5": "http://time4recess.com/wp-content/uploads/2015/07/Day-Care3.jpg"
+  }, {
+    "name": "Home Sweet Home",
+    "address": "1234 Sweet Home St, Portland, OR 97211",
+    "email": "daycare@gmail.com",
+    "phone": "305 123 4567",
+    "waitlist": "none",
+    "ratio": "3:1",
+    "certifications": "NAEYC",
+    "hours": "7:30 AM - 6:00 PM",
+    "mission": "Create an secure environment for children.",
+    "description": "Sweet Care is a licenced child care facility that provides care for children of all ages.",
+    "username": "homesweethome",
+    "password": "1234",
+    "image1": "http://genheration.com/wp-content/uploads/2015/02/daycare_play_rug.jpg",
+    "image2": "http://www.commdiginews.com/wp-content/uploads/2014/10/good-daycare.jpg",
+    "image3": "https://www.vapaternity.org/wp-content/uploads/2013/02/day-care.jpg",
+    "image4": "https://blog.mint.com/wp-content/uploads/2013/08/The-Cost-of-Childcare-Vs.-the-Cost-of-Not-Working.jpg",
+    "image5": "http://time4recess.com/wp-content/uploads/2015/07/Day-Care3.jpg"
+  }]
+}
