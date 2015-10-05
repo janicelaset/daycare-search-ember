@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('daycare', {path: 'daycare/:daycare_id'});
+  this.route('new-daycare');
 });
 
 export default Router;

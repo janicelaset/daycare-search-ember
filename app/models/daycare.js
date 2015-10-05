@@ -7,7 +7,7 @@ export default DS.Model.extend({
   phone: DS.attr(),
   waitlist: DS.attr(),
   ratio: DS.attr(),
-  certifications:
+  certifications: DS.attr(),
   hours: DS.attr(),
   mission: DS.attr(),
   description: DS.attr(),
