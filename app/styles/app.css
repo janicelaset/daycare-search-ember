@@ -1,0 +1,15 @@
+
+img {
+  width: 460px;
+  height: 308px;
+  margin: auto;
+}
+
+.carousel {
+  max-width: 50%;
+  margin: auto;
+}
+
+li  {
+  list-style-type: none;
+}
