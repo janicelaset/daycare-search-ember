@@ -4,11 +4,19 @@
   <div class="input-group">
     {{input type="text" value=zipCode id="zipCode" class="form-control" placeholder="Enter Zip Code"}}
     <span class="input-group-btn">
-      <button {{action 'search'}} class="btn btn-default" type="button">
+      <button {{action 'search' daycare}} class="btn btn-default" type="button">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       </button>
     </span>
   </div><!-- /input-group -->
+</div>
+
+{{#each daycare as |daycare|}}
+  {{daycare.address}}
+{{/each}}
+
+<div class="test">
+  <span class=test-address></span>
 </div>
 
 <div class="map-display"></div>

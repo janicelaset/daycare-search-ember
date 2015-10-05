@@ -20,7 +20,7 @@ export default Ember.Component.extend({
       this.$('.search-daycare').show();
       this.$('.display-map').hide();
     },
-    search() {
+    search(daycare) {
       var container = this.$('.map-display')[0];
       var options = {
         center: this.get('map').center(39.8282, -98.5795),
@@ -28,9 +28,23 @@ export default Ember.Component.extend({
       };
       var newMap = this.get('map').findMap(container, options);
 
-      var zip = this.get('zipCode');
-      var latLong = this.get('map').codeZip(newMap, zip);
-      debugger;
+      var zipInput = this.get('zipCode');
+
+      var addresses = [];
+      var address;
+      var addressSplit;
+      var zipCode
+      daycare.forEach(function(daycare) {
+        address = daycare.get('address');
+        addressSplit = address.split(' ');
+        zipCode = addressSplit[addressSplit.length - 1];
+        if (zipCode === zipInput) {
+          addresses.push(address);
+        }
+      });
+
+      this.get('map').codeZip(newMap, zipInput);
+
     }
   }
 });

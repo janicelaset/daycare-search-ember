@@ -15,7 +15,6 @@ export default Ember.Service.extend({
       if(status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
         map.fitBounds(results[0].geometry.bounds)
-        return results[0].geometry.location;
       }
       else {
         alert("It didn't work because" + status);
