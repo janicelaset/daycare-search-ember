@@ -20,5 +20,21 @@ export default Ember.Service.extend({
         alert("It didn't work because" + status);
       }
     });
+  },
+  setMarkers(map, addresses) {
+    var geocoder = new this.googleMaps.Geocoder();
+    addresses.forEach(function(address) {
+      geocoder.geocode( {'address': address}, function(results, status) {
+        if(status == google.maps.GeocoderStatus.OK) {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+          });
+        }
+        else {
+          alert("It didn't work because" + status);
+        }
+      })
+    });
   }
 });

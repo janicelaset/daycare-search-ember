@@ -44,7 +44,7 @@ export default Ember.Component.extend({
       });
 
       this.get('map').codeZip(newMap, zipInput);
-
+      this.get('map').setMarkers(newMap, addresses);
     }
   }
 });
