@@ -10,12 +10,11 @@ export default Ember.Service.extend({
     return new this.googleMaps.LatLng(latitude, longitude);
   },
   codeZip(map, zip) {
-    debugger;
     var geocoder = new this.googleMaps.Geocoder();
-    geocoder.geocode( {'address': '6141 SW CrossCreek Dr, Aloha, OR'}, function(results, status) {
-      debugger;
+    geocoder.geocode( {'address': zip}, function(results, status) {
       if(status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
+        map.fitBounds(results[0].geometry.bounds)
         return results[0].geometry.location;
       }
       else {
