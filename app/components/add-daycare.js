@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
+
   actions: {
     addDaycare() {
       var params = {
-        username: this.get('username'),
-        password: this.get('password'),
+        // username: this.get('username'),
+        // password: this.get('password'),
         name: this.get('name'),
         address: this.get('address'),
         email: this.get('email'),
@@ -20,7 +22,8 @@ export default Ember.Component.extend({
         image2: this.get('image2'),
         image3: this.get('image3'),
         image4: this.get('image4'),
-        image5: this.get('image5')
+        image5: this.get('image5'),
+        user: this.get('user')
 
       }
 

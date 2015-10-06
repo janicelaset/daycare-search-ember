@@ -2,7 +2,14 @@
   <div class="container">
     <ul class="nav navbar-nav">
       <li id="brand">{{#link-to 'index'}}Daycare Share!{{/link-to}}</li>
-      <li class="navLinks">{{#link-to 'new-daycare'}}<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>Add Daycare{{/link-to}}</li>
+      {{#if session.isAuthenticated}}
+      <li class="navLinks">{{#link-to 'new-daycare' session="session"}}<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>Add Daycare{{/link-to}}</li>
+      {{else}}
+      {{/if}}
+      {{#if session.isAuthenticated}}
+      <li class="navLinks">{{#link-to 'edit-daycare'}}<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>Edit Daycare{{/link-to}}</li>
+      {{else}}
+      {{/if}}
       {{#if session.isAuthenticated}}
       Logged in as {{session.currentUser.displayName}}
       {{#link-to 'user' session.content.uid}}<button>Your Profile</button>{{/link-to}}
