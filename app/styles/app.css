@@ -91,3 +91,6 @@ img {
   display: inline-block;
   max-width: 100%;
 }
+.container {
+  text-align: center;
+}
