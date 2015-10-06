@@ -1,4 +1,11 @@
+<div class="container">
+  <div class="row">
+    {{model.firstName}}'s Daycares
+  </div>
+</div>
+
+
 {{#each model.daycares as |daycare|}}
-  {{daycare.name}}
+  <li>{{daycare.name}} {{edit-modal daycare=daycare}}</li>
 {{/each}}
 {{outlet}}
