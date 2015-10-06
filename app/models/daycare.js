@@ -11,14 +11,14 @@ export default DS.Model.extend({
   hours: DS.attr(),
   mission: DS.attr(),
   description: DS.attr(),
-  username: DS.attr(),
-  password: DS.attr(),
+  // username: DS.attr(),
+  // password: DS.attr(),
   image1: DS.attr(),
   image2: DS.attr(),
   image3: DS.attr(),
   image4: DS.attr(),
   image5: DS.attr(),
   teachers: DS.hasMany('teacher', {async: true}),
-  classes: DS.hasMany('class', {async: true})
-
+  classes: DS.hasMany('class', {async: true}),
+  user: DS.belongsTo('user', {async: true})
 });
