@@ -3,6 +3,7 @@
   margin: 20px auto;
   height: 600px;
   width: 900px;
+}
 
 img {
   width: 460px;
@@ -21,4 +22,15 @@ li  {
 
 .navLinks {
   text-align: center;
+}
+
+#daycare {
+  color: #7EDFFF;
+}
+#share {
+  color: #990000;
+}
+
+#brand {
+  color: #7EDFFF;
 }
