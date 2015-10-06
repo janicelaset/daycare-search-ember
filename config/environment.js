@@ -14,6 +14,9 @@ module.exports = function(environment) {
       'frame-src': "'self' https://*.firebaseio.com"
     },
     firebase: 'https://daycare-search.firebaseio.com/',
+    torii: {
+      sessionServiceName: 'session'
+    },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
