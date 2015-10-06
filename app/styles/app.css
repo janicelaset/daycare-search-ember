@@ -35,3 +35,59 @@ li  {
   color: #7EDFFF;
   font-size: 1.5em;
 }
+/* Call to Action */
+
+.call-to-action {
+    padding: 50px 0;
+}
+
+.call-to-action .btn {
+    margin: 10px;
+}
+
+/* Map */
+
+.map {
+    height: 250px;
+    width: 90%;
+}
+
+@media(max-width:768px) {
+    .map {
+        height: 75%;
+    }
+}
+#bg-primary {
+	color: #fff;
+	background-color: #337ab7;
+}
+a#bg-primary:hover {
+	background-color: #286090;
+}
+#daycaredescription {
+}
+.hero-feature {
+  margin-bottom: 30px;
+  height: 30em;
+  text-align: center;
+}
+.thumbnail {
+  height: 30em;
+  text-align: center;
+}
+img {
+  vertical-align: middle;
+}
+  .img-responsive
+  .thumbnail > img,
+  .thumbnail a > img,
+  .carousel-inner > .item > img,
+  height: auto;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-thumbnail {
+  display: inline-block;
+  max-width: 100%;
+}
