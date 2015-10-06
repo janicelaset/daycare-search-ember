@@ -4,15 +4,18 @@
       <li id="brand">{{#link-to 'index'}}<span id='daycare'>Daycare</span><span id='share'>Share</span>{{/link-to}}</li>
 
       {{#if session.isAuthenticated}}
-      <li class="navLinks">{{#link-to 'new-daycare'}}<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>Add Daycare{{/link-to}}</li>
 
+        <li class="navLinks">{{#link-to 'new-daycare'}}<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>Add Daycare{{/link-to}}</li>
       {{/if}}
+
+
 
 
 
       <!-- {{#if (eq session.uid model.user.id)}}
       <li class="navLinks">{{#link-to 'edit-daycare'}}<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>Edit Daycare{{/link-to}}</li>
       {{/if}} -->
+
 
       {{#if session.isAuthenticated}}
       <!-- Logged in as {{session.currentUser.displayName}}

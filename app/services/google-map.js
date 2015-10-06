@@ -35,12 +35,11 @@ export default Ember.Service.extend({
       }
     });
   },
-  setMarkers(map, addresses) {
+  setMarkers(map, addresses, contents) {
     var geocoder = new this.googleMaps.Geocoder();
     var bounds = new google.maps.LatLngBounds();
     var index = 0;
     addresses.forEach(function(address) {
-      index++;
       geocoder.geocode( {'address': address}, function(results, status) {
         if(status == google.maps.GeocoderStatus.OK) {
           var marker = new google.maps.Marker({
@@ -52,8 +51,9 @@ export default Ember.Service.extend({
           map.fitBounds(bounds);
 
           var infowindow = new google.maps.InfoWindow({
-            content: 'test'
+            content: contents[index]
           });
+          index++;
           marker.addListener('click', function() {
             infowindow.open(map, marker);
           });
@@ -63,5 +63,8 @@ export default Ember.Service.extend({
         }
       })
     });
+  },
+  autocomplete(input, options) {
+    return autocomplete = new google.maps.places.Autocomplete(input, options);
   }
 });
