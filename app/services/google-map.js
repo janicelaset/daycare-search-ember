@@ -63,5 +63,8 @@ export default Ember.Service.extend({
         }
       })
     });
+  },
+  autocomplete(input, options) {
+    return autocomplete = new google.maps.places.Autocomplete(input, options);
   }
 });

@@ -9,6 +9,12 @@ export default Ember.Component.extend({
 
   didInsertElement: function() {
       this.$('.search-daycare').hide();
+
+      var options = {
+        types: ['address']
+      };
+      this.get('map').autocomplete(this.get('address'), options);
+
   },
 
   actions: {
@@ -24,8 +30,6 @@ export default Ember.Component.extend({
       this.$('.display-map').hide();
     },
     search(daycare) {
-      // this.$('.search-result').hide();
-
       var container = this.$('.map-display')[0];
       var options = {
         center: this.get('map').center(39.8282, -98.5795),
@@ -34,6 +38,7 @@ export default Ember.Component.extend({
       var newMap = this.get('map').findMap(container, options);
 
       var addressInput = this.get('address');
+
       var radius = this.get('selectedRadius');
       radius = radius * 1609.34;
 
@@ -72,12 +77,6 @@ export default Ember.Component.extend({
       });
 
       var withinRadius = this.get('map').codeAddress(newMap, addressInput, addresses, radius);
-      if (withinRadius === undefined) {
-        this.$('.search-result').text("There were no daycares found in this area");
-      }
-      else {
-        this.$('.search-result').text("");
-      }
 
       this.get('map').setMarkers(newMap, addresses, contents);
     }
