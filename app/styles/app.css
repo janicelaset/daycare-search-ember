@@ -18,3 +18,7 @@ img {
 li  {
   list-style-type: none;
 }
+
+.navLinks {
+  text-align: center;
+}
