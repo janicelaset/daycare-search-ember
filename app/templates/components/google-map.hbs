@@ -1,14 +1,23 @@
 <button {{action 'showMap'}} class="btn btn-primary display-map">Find a Daycare</button>
 
-<div class="col-xs-4 search-daycare">
-  <div class="input-group">
-    {{input type="text" value=zipCode id="zipCode" class="form-control" placeholder="Enter Zip Code"}}
-    <span class="input-group-btn">
-      <button {{action 'search' daycare}} class="btn btn-default" type="button">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-      </button>
-    </span>
-  </div><!-- /input-group -->
+<div class="row">
+  <div class="col-xs-2 search-daycare">
+    <form class="form-inline">
+    <label for="distance">Radius</label>
+    {{view "select" content=radius value=selectedRadius}}
+    </form>
+  </div>
+
+  <div class="col-xs-5 search-daycare">
+    <div class="input-group">
+      {{input type="text" value=address id="address" class="form-control" placeholder="Enter Address"}}
+      <span class="input-group-btn">
+        <button {{action 'search' daycare}} class="btn btn-default" type="button">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div><!-- /input-group -->
+  </div>
 </div>
 
 {{#each daycare as |daycare|}}
