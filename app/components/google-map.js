@@ -24,6 +24,8 @@ export default Ember.Component.extend({
       this.$('.display-map').hide();
     },
     search(daycare) {
+      // this.$('.search-result').hide();
+
       var container = this.$('.map-display')[0];
       var options = {
         center: this.get('map').center(39.8282, -98.5795),
@@ -47,6 +49,7 @@ export default Ember.Component.extend({
 
       addressSplit = addressInput.split(' ');
       stateInput = addressSplit[addressSplit.length - 2];
+      stateInput = stateInput.toLowerCase();
 
       //only get addresses in the state
       daycare.forEach(function(daycare) {
@@ -57,6 +60,7 @@ export default Ember.Component.extend({
         description = daycare.get('description');
         addressSplit = address.split(' ');
         state = addressSplit[addressSplit.length - 2];
+        state = state.toLowerCase();
 
         if (state === stateInput) {
           addresses.push(address);
@@ -68,6 +72,12 @@ export default Ember.Component.extend({
       });
 
       var withinRadius = this.get('map').codeAddress(newMap, addressInput, addresses, radius);
+      if (withinRadius === undefined) {
+        this.$('.search-result').text("There were no daycares found in this area");
+      }
+      else {
+        this.$('.search-result').text("");
+      }
 
       this.get('map').setMarkers(newMap, addresses, contents);
     }
