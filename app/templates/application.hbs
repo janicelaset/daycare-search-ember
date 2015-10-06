@@ -10,9 +10,9 @@
 
 
 
-      {{#if session.isAuthenticated}}
+      <!-- {{#if (eq session.uid model.user.id)}}
       <li class="navLinks">{{#link-to 'edit-daycare'}}<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>Edit Daycare{{/link-to}}</li>
-      {{/if}}
+      {{/if}} -->
 
       {{#if session.isAuthenticated}}
       <!-- Logged in as {{session.currentUser.displayName}}
