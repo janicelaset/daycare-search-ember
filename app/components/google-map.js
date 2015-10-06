@@ -54,6 +54,7 @@ export default Ember.Component.extend({
         }
       });
 
+      // this.get('map').getMap(newMap, addressInput);
       var withinRadius = this.get('map').codeAddress(newMap, addressInput, addresses, radius);
 
       this.get('map').setMarkers(newMap, addresses);
