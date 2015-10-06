@@ -4,6 +4,9 @@ export default Ember.Component.extend({
   map: Ember.inject.service('google-map'),
   initMap: null,
 
+  selectedRadius: 5,
+  radius: ["5", "10", "20", "30", "50"],
+
   didInsertElement: function() {
       this.$('.search-daycare').hide();
   },
@@ -28,22 +31,31 @@ export default Ember.Component.extend({
       };
       var newMap = this.get('map').findMap(container, options);
 
-      var zipInput = this.get('zipCode');
+      var addressInput = this.get('address');
+      var radius = this.get('selectedRadius');
+      radius = radius * 1609.34;
 
       var addresses = [];
       var address;
       var addressSplit;
-      var zipCode
+      var state;
+      var stateInput;
+
+      addressSplit = addressInput.split(' ');
+      stateInput = addressSplit[addressSplit.length - 2];
+
+      //only get addresses in the state
       daycare.forEach(function(daycare) {
         address = daycare.get('address');
         addressSplit = address.split(' ');
-        zipCode = addressSplit[addressSplit.length - 1];
-        if (zipCode === zipInput) {
+        state = addressSplit[addressSplit.length - 2];
+        if (state === stateInput) {
           addresses.push(address);
         }
       });
 
-      this.get('map').codeZip(newMap, zipInput);
+      var withinRadius = this.get('map').codeAddress(newMap, addressInput, addresses, radius);
+
       this.get('map').setMarkers(newMap, addresses);
     }
   }
