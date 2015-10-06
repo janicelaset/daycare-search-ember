@@ -1,8 +1,9 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <ul class="nav navbar-nav">
-      <li id="brand">{{#link-to 'index'}}Daycare Share!{{/link-to}}</li>
+      <li id="brand">{{#link-to 'index'}}<span id='daycare'>Daycare</span><span id='share'>Share</span>{{/link-to}}</li>
       <li class="navLinks">{{#link-to 'new-daycare'}}<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>Add Daycare{{/link-to}}</li>
+<<<<<<< HEAD
       {{#if session.isAuthenticated}}
       Logged in as {{session.currentUser.displayName}}
       {{#link-to 'user' session.content.uid}}<button>Your Profile</button>{{/link-to}}
@@ -11,6 +12,8 @@
       <li class="navLinks">{{login-modal method="signUp" signUp="signUp" showExtras=true}}</li>
       <li class="navLinks">{{login-modal method="signIn" signIn="signIn" showExtras=false}}</li>
       {{/if}}
+=======
+>>>>>>> 6303400d0dd4bd3ee37c0c56132cd451c9623d15
     </ul>
   </div>
 </nav>
