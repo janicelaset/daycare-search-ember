@@ -11,10 +11,18 @@ export default Ember.Component.extend({
       this.$('.search-daycare').hide();
 
       var options = {
-        types: ['address']
+        types: ['address'],
+        componentRestrictions: {country: 'us'}
       };
-      this.get('map').autocomplete(this.get('address'), options);
 
+      var autocomplete = this.get('map').autoComplete((document.getElementById('address')), options);
+
+      this.get('map').listener(autocomplete);
+
+      // autocomplete.addListener('place_changed', function() {
+      //   var place = autocomplete.getPlace();
+      //   document.getElementById('address').val = place;
+      // });
   },
 
   actions: {
@@ -37,8 +45,8 @@ export default Ember.Component.extend({
       };
       var newMap = this.get('map').findMap(container, options);
 
-      var addressInput = this.get('address');
-
+      var addressInput = document.getElementById('address').val
+      // var addressInput = this.get('address');
       var radius = this.get('selectedRadius');
       radius = radius * 1609.34;
 
@@ -53,7 +61,7 @@ export default Ember.Component.extend({
       var id;
 
       addressSplit = addressInput.split(' ');
-      stateInput = addressSplit[addressSplit.length - 2];
+      stateInput = addressSplit[addressSplit.length - 3];
       stateInput = stateInput.toLowerCase();
 
       //only get addresses in the state

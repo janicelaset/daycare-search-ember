@@ -64,7 +64,13 @@ export default Ember.Service.extend({
       })
     });
   },
-  autocomplete(input, options) {
-    return autocomplete = new google.maps.places.Autocomplete(input, options);
+  autoComplete(input, options) {
+    return new this.googleMaps.places.Autocomplete(input, options);
+  },
+  listener(autocomplete) {
+    autocomplete.addListener('place_changed', function() {
+      var place = autocomplete.getPlace();
+      document.getElementById('address').val = place.formatted_address;
+    });
   }
 });
